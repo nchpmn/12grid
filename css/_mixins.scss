@@ -30,12 +30,11 @@
   }
 }
 
-// ---- SHORTCUTS ----
+// ---- MISC + UTILITY ----
 
 // p {
 //   @include prefix(hyphens, auto)
 // }
-
 @mixin prefix($name, $argument) {
   -webkit-#{$name}: #{$argument};
   -ms-#{$name}: #{$argument};
@@ -43,3 +42,52 @@
   -o-#{$name}: #{$argument};
   #{$name}: #{$argument};
 }
+
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of 'table' rather than 'block' is only necessary if using
+//    ':before' to contain the top-margins of child elements.
+//
+// .box {
+//   @include clearfix;
+//   ...
+// }
+.cf:before,
+.cf:after {
+    content: " "; // 1
+    display: table; // 2
+}
+.cf:after {
+    clear: both;
+}
+
+// .child {
+//   ...
+//   &.both {
+//     @include center;
+//   }
+//   &.horizontal {
+//     @include center(true, false);
+//   }
+//   &.vertical {
+//     @include center(false, true);
+//   }
+// }
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+

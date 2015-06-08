@@ -199,4 +199,13 @@ table {
 td, th {
   padding: 0; }
 
+/* line 59, D:/Server/www/12grid/css/_mixins.scss */
+.cf:before, .cf:after {
+  content: " ";
+  display: table; }
+
+/* line 63, D:/Server/www/12grid/css/_mixins.scss */
+.cf:after {
+  clear: both; }
+
 /*# sourceMappingURL=style.css.map */
