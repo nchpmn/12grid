@@ -41,3 +41,64 @@
   margin-left:($gutter / -2);
   margin-right:($gutter / -2);
 }
+
+/* ---- COLUMNS ---- */
+
+// Give the basic styles to be @extended on all cols
+%col {
+  position:relative;
+  min-height:1px;
+  padding-left:($gutter / -2);
+  padding-right:($gutter / -2);
+}
+
+// The following very clever code not working!
+// Instead, duplicate @includes below for each size
+//
+// $sizes: xs sm md lg;
+//
+// @each $size in $sizes {
+//   %#{$size}-float-left {
+//     float:left;
+//   }
+//
+//   @include #{$size} {
+//     @include make-column(#{$size});
+//   }
+// }
+
+/* ---- COLUMNS / XS ---- */
+%xs-float-left {
+  float:left;
+}
+
+@include xs {
+  @include make-column(xs);
+}
+
+/* ---- COLUMNS / SM ---- */
+%sm-float-left {
+  float:left;
+}
+
+@include sm {
+  @include make-column(sm);
+}
+
+/* ---- COLUMNS / MD ---- */
+%md-float-left {
+  float:left;
+}
+
+@include md {
+  @include make-column(md);
+}
+
+/* ---- COLUMNS / LG ---- */
+%lg-float-left {
+  float:left;
+}
+
+@include lg {
+  @include make-column(lg);
+}

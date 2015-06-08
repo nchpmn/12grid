@@ -12,6 +12,11 @@
 //   }
 // }
 
+@mixin xs {
+  // Nothing should happen on the xs breakpoint
+  @content;
+}
+
 @mixin sm {
   @media only screen and (min-width: $sm-min-width) {
     @content;
@@ -29,6 +34,36 @@
     @content;
   }
 }
+
+// ---- COLUMNS ----
+
+@mixin make-column ($size, $gutter-width: $gutter) {
+  @for $i from 1 through 12 {
+    .col-#{$size}-#{$i} {
+      @extend %col;
+      @extend %#{size}-float-left;
+      width:percentage($i/12);
+    }
+    .col-#{$size}-pull-#{$i} {
+      right:percentage($i/12);
+    }
+    .col-#{$size}-push-#{$i} {
+      left:percentage($i/12);
+    }
+    .col-#{$size}-offset-#{$i} {
+      margin-left:percentage($i/12);
+    }
+  }
+
+  col-#{$size}-pull-0 {
+    right:auto;
+  }
+
+  col-#{$size}-push-0 {
+    left:auto;
+  }
+}
+
 
 
 // ---- TYPOGRAPHY ----
