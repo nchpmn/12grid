@@ -1,1 +1,31 @@
 // ---- MIXINS ----
+
+// ---- MIXINS / BREAKPOINTS ----
+//  .sidebar {
+//    width: 60%;
+//    float: left;
+//    margin: 0 2% 0 0;
+//    @include md {
+//      width: 100%;
+//      float: none;
+//      margin: 0;
+//   }
+// }
+
+@mixin sm {
+  @media only screen and (min-width: $sm-min-width) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: $md-min-width) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: $lg-min-width) {
+    @content;
+  }
+}
