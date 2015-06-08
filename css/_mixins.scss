@@ -1,6 +1,6 @@
 // ---- MIXINS ----
 
-// ---- MIXINS / BREAKPOINTS ----
+// ---- BREAKPOINTS ----
 //  .sidebar {
 //    width: 60%;
 //    float: left;
@@ -28,4 +28,18 @@
   @media only screen and (min-width: $lg-min-width) {
     @content;
   }
+}
+
+// ---- SHORTCUTS ----
+
+// p {
+//   @include prefix(hyphens, auto)
+// }
+
+@mixin prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
 }
