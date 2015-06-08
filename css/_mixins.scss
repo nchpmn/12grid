@@ -35,12 +35,16 @@
 
 // body {
 //   @include font-size(16);
+//   @include line-height(24);
 // }
 @mixin font-size($sizeValue:12 ){
   font-size: $sizeValue + px; //fallback for old browsers
   font-size: (0.125 * $sizeValue) + rem;
 }
-
+@mixin line-height($heightValue: 12 ){
+    line-height: $heightValue + px; //fallback for old browsers
+    line-height: (0.125 * $heightValue) + rem;
+}
 
 // ---- MISC + UTILITY ----
 
