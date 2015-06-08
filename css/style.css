@@ -209,4 +209,33 @@ td, th {
   -o-box-sizing: border-box;
   box-sizing: border-box; }
 
+/* ---- CONTAINERS ---- */
+/* line 16, D:/Server/www/12grid/css/style.scss */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media only screen and (min-width: 992px) {
+    .container {
+      width: 970px; } }
+  @media only screen and (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
+
+/* line 33, D:/Server/www/12grid/css/style.scss */
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* line 40, D:/Server/www/12grid/css/style.scss */
+.row {
+  margin-left: -15px;
+  margin-right: -15px; }
+
 /*# sourceMappingURL=style.css.map */

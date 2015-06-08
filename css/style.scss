@@ -10,3 +10,34 @@
 *, *:before, *:after {
   @include prefix(box-sizing, border-box);
 }
+
+/* ---- CONTAINERS ---- */
+
+.container {
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:($gutter / 2);
+  padding-right:($gutter / 2);
+  @include sm {
+    //width:calc(0.975 * #{$sm-min-width}); possible way to extend nicely?
+    width:750px;
+  }
+  @include md {
+    width:970px;
+  }
+  @include lg {
+    width:1170px;
+  }
+}
+
+.container-fluid {
+  margin-right:auto;
+  margin-left:auto;
+  padding-left:($gutter / 2);
+  padding-right:($gutter / 2);
+}
+
+.row {
+  margin-left:($gutter / -2);
+  margin-right:($gutter / -2);
+}
