@@ -1,5 +1,12 @@
-// ---- IMPORT ----
+/* ---- IMPORT ---- */
 
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
+
+
+/* ---- GLOBAL ---- */
+
+*, *:before, *:after {
+  @include prefix(box-sizing, border-box);
+}

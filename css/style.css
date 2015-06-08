@@ -1,3 +1,4 @@
+/* ---- IMPORT ---- */
 /* Normalize.css v3.0.2 | Customised for 12grid by @nchpmn */
 /* Global
    ========================================================================== */
@@ -199,13 +200,13 @@ table {
 td, th {
   padding: 0; }
 
-/* line 59, D:/Server/www/12grid/css/_mixins.scss */
-.cf:before, .cf:after {
-  content: " ";
-  display: table; }
-
-/* line 63, D:/Server/www/12grid/css/_mixins.scss */
-.cf:after {
-  clear: both; }
+/* ---- GLOBAL ---- */
+/* line 10, D:/Server/www/12grid/css/style.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
 
 /*# sourceMappingURL=style.css.map */
